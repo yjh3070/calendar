@@ -1,0 +1,56 @@
+#EventList{
+
+}
+
+.circle{
+  width: 16px; 
+  height:16px; 
+  margin-right: 8px;
+  background-color: #673AB7;
+  border-radius: 50%;
+}
+
+.user div, h2 {
+  display: inline-block;
+}
+
+.event-list{
+  margin-top: 10vh;
+}
+
+.event{
+  position: relative;
+  width: 260px;
+  height: 80px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.event-date{
+  display: inline-block;
+  margin: 0px 16px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: #673AB7
+}
+
+.single-digit,
+.double-digit{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.single-digit{
+  left: 52px;
+}
+
+.double-digit{
+  left: 68px;
+}
+
+.event-time, .event-name{
+  font-size: 14px;
+}
