@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EventList from './components/EventList';
-import Calendar from './components/Calendar';
+import RightCalendar from './components/RightCalendar';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <EventList></EventList>
-        <Calendar></Calendar>
+        <RightCalendar></RightCalendar>
       </div>
     );
   }

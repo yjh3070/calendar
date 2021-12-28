@@ -2,3 +2,27 @@
   display: flex;
   margin: 32px;
 }
+
+.color-purple{
+  background-color: #673AB7;
+}
+
+.color-blue{
+  background-color: #3F51B5;
+}
+
+.color-green{
+  background-color: #8BC34A;
+}
+
+.font-color-purple{
+  color: #673AB7;
+}
+
+.font-color-blue{
+  color: #3F51B5;
+}
+
+.font-color-green{
+  color: #8BC34A;
+}

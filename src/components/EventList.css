@@ -1,12 +1,11 @@
 #EventList{
-
+  margin-right: 64px;
 }
 
 .circle{
   width: 16px; 
   height:16px; 
   margin-right: 8px;
-  background-color: #673AB7;
   border-radius: 50%;
 }
 
@@ -33,7 +32,6 @@
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  color: #673AB7
 }
 
 .single-digit,
