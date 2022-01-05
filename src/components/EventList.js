@@ -1,22 +1,22 @@
 import React from 'react';
 import './EventList.css';
 
-function DoubleDigitFormat(item){
+const DoubleDigitFormat = (item) => {
   return ('0' + item).slice(-2);
 }
 
-function Evnet({ event }) {
-  const startTime = event.startTime;
-  const endTime = event.endTime;
-  const startHours = DoubleDigitFormat(startTime.getHours());
-  const endHours = DoubleDigitFormat(endTime.getHours());
-  const startMinutes = DoubleDigitFormat(startTime.getMinutes());
-  const endMinutes = DoubleDigitFormat(endTime.getMinutes());
+const Event = ({ event }) => {
+  const start = event.start;
+  const end = event.end;
+  const startHours = DoubleDigitFormat(start.getHours());
+  const endHours = DoubleDigitFormat(end.getHours());
+  const startMinutes = DoubleDigitFormat(start.getMinutes());
+  const endMinutes = DoubleDigitFormat(end.getMinutes());
   
-  const date = startTime.getDate();
+  const date = start.getDate();
   const time = startHours + ":" + startMinutes + " - " + endHours + ":" + endMinutes;
-  const name = event.name;
-  const color = "font-color-" + event.color;
+  const name = event.title;
+  const color = "font-color-" + event.textColor;
   let digit;
 
   if(date < 10){
@@ -29,7 +29,7 @@ function Evnet({ event }) {
     <div className="event">
       <h1 className={color +" event-date"}>{date}</h1>
       <span className={digit}>
-        <div className="event-time font-color-gray">{time}</div>
+        <div className="event-time font-color-gray">{event.category == "time" ? time : "하루종일"}</div>
         <div className="event-name font-color-black">{name}</div>
       </span>
     </div>
@@ -40,32 +40,40 @@ const EventList = () => {
 
   const events =[
     {
-        id: 1,
-        color: 'purple',
-        startTime: new Date('2021-12-03T10:00:00'),
-        endTime: new Date('2021-12-03T11:00:00'),
-        name: "카페 투어"
+      id: '1',
+      calendarId: '0',
+      title: "카페 투어",
+      category: 'time',
+      textColor: 'purple',
+      start: new Date('2021-12-03T10:00:00'),
+      end: new Date('2021-12-03T11:00:00')
     },
     {
-        id: 2,
-        color: 'blue',
-        startTime: new Date('2021-12-12'),
-        endTime: new Date('2021-12-12'),
-        name: "생일"
+      id: '2',
+      calendarId: '0',
+      title: "생일",
+      category: 'allday',
+      textColor: 'blue',
+      start: new Date('2021-12-12'),
+      end: new Date('2021-12-12')
     },
     {
-        id: 3,
-        color: 'purple',
-        startTime: new Date('2021-12-17T21:00:00'),
-        endTime: new Date('2021-12-17T22:00:00'),
-        name: "누구랑 저녁 약속"
+      id: '3',
+      calendarId: '0',
+      title: "누구랑 저녁 약속",
+      category: 'time',
+      textColor: 'purple',
+      start: new Date('2021-12-17T21:00:00'),
+      end: new Date('2021-12-17T22:00:00')
     },
     {
-      id: 4,
-      color: 'green',
-      startTime: new Date('2021-12-27T14:00:00'),
-      endTime: new Date('2021-12-27T15:00:00'),
-      name: "스파이더맨 혼영"
+      id: '4',
+      calendarId: '0',
+      title: "스파이더맨 혼영",
+      category: 'time',
+      textColor: 'green',
+      start: new Date('2021-12-27T14:00:00'),
+      end: new Date('2021-12-27T15:00:00')
     }
   ]
 
@@ -78,7 +86,7 @@ const EventList = () => {
       <div className="event-list">
         <h1>이달의 이벤트</h1>
         {events.map(event => (
-          <Evnet event={event} key={event.id}/>
+          <Event event={event} key={event.id}/>
         ))}
       </div>
     </div>

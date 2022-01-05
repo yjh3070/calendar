@@ -1,5 +1,6 @@
 .App{
   display: flex;
+  height: calc(100% - 64px);
   margin: 32px;
 }
 

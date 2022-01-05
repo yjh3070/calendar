@@ -1,3 +1,54 @@
 #rightCalendar{
   width: 100%;
 }
+
+.gray-line{
+  margin: 1.3em 0;
+  color: #888888;
+}
+
+.header{
+  position: relative;
+  height: 24px;
+}
+
+.calendar-svg,
+.calendar-text{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.calendar-text{
+  left: 32px;
+}
+
+.calendar{
+  padding: 16px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.calendar-header{
+  margin-bottom: 16px;
+}
+
+.calendar-current-month{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.calendar-button{
+  float: right;
+}
+
+.calendar-button button{
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  background-color: white;
+  color: #888888;
+  font-size: 18px;
+}
